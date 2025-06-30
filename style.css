@@ -1,0 +1,85 @@
+/* style.css */
+@font-face {
+  font-family: "Terminal";
+  src: url("fonts/InfilBodyFont.ttf") format("truetype");
+}
+@font-face {
+  font-family: "TerminalTitle";
+  src: url("fonts/InfilTitleFont.ttf") format("truetype");
+}
+
+:root {
+  --background: #000000;
+  --text-glow: #00ff88;
+  --accent: #ff4141;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Terminal", monospace;
+  background-color: var(--background);
+  color: var(--text-glow);
+  padding: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--text-glow);
+}
+
+.title {
+  font-family: "TerminalTitle", monospace;
+  font-size: 2.5rem;
+  color: var(--text-glow);
+  text-shadow: 0 0 10px var(--text-glow);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--text-glow);
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent);
+}
+
+section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  padding-top: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+section.active {
+  display: block;
+  opacity: 1;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
